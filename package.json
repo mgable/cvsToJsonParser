@@ -11,6 +11,7 @@
   "dependencies": {
     "commander": "^2.9.0",
     "csvtojson": "^1.1.4",
+    "exceljs": "^0.4.0",
     "node-excel-to-json": "0.0.3",
     "xls-to-json": "^0.4.0",
     "xlsx": "^0.8.6"
