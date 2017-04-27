@@ -8,7 +8,7 @@
 		var jsonObj = util.getJsonObj(workbook.Sheets["Help"]);
 		var output = _makeOutput(util.parse(jsonObj, date));
 
-		util.save("help", util.parse(jsonObj, date));
+		//util.save("help", util.parse(jsonObj, date));
 
 		return output;
 	}

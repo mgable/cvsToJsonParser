@@ -10,7 +10,7 @@
 		var output = _makeOutput(util.parse(jsonObj, date));
 
 
-		util.save("shop", util.parse(jsonObj, date));
+		//util.save("shop", util.parse(jsonObj, date));
 
 		return output;
 	}
