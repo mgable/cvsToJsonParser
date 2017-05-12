@@ -14,12 +14,14 @@
 	function _makeOutput(records){
 		// GIFT PAGE
 		var giftpage_hero = _.where(records, {"Channel": "GIFTING LANDING PAGE-Hero Spot"});
+		var giftpage_intro = _.where(records, {"Channel": "GIFTING LANDING PAGE-Gift Intro"});
 		var giftpage_themes = _.where(records, {"Channel": "GIFTING LANDING PAGE-Gift Themes"});
 		var giftpage_upsells = _.where(records, {"Channel": "GIFTING LANDING PAGE-Club Upsell"});
 		var giftpage_select = _.where(records, {"Channel": "GIFTING LANDING PAGE-Gift Shipment ChoicesThemes"});
 		var giftpage_select_options = _.where(records, {"Channel": "GIFTING CHOOSE ASSORTMENT-Assortment Options"});
 
 		giftpage_hero = util.getHeroItems(giftpage_hero);
+		giftpage_intro = util.getItems(giftpage_intro);
 		giftpage_themes = util.getItems(giftpage_themes);
 		giftpage_upsells = util.getUpsells(giftpage_upsells);
 		giftpage_select = util.getItems(giftpage_select);
@@ -28,6 +30,7 @@
 		var output = {
 				giftpage: {
 					hero: giftpage_hero,
+					intro: giftpage_intro,
 					themes: giftpage_themes,
 					upsells: giftpage_upsells,
 					select: giftpage_select
