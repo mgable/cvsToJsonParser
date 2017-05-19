@@ -14,16 +14,17 @@
 		.parse(process.argv);
 
 
-	var targetDate = program.date || "3/6/17";
+	var defaultDate = "3/6/17";
+	var targetDate = program.date || defaultDate;
 	var workbook = XLSX.readFile(program.file || 'ContentProgramming.xlsx');
 	var path = program.path || __dirname
 	var header = "var MSW = MSW || {}; MSW.data = ";
 
 	var landingpage = require('./indexLanding.js')(workbook, targetDate);
-	var giftpage = require('./indexGift.js')(workbook, targetDate);
-	var joinpage = require('./indexJoin.js')(workbook, targetDate);
-	var shoppage = require('./indexShop.js')(workbook, targetDate);
-	var helppage = require('./indexHelp.js')(workbook, targetDate);
+	var giftpage = require('./indexGift.js')(workbook, defaultDate);
+	var joinpage = require('./indexJoin.js')(workbook, defaultDate);
+	var shoppage = require('./indexShop.js')(workbook, defaultDate);
+	var helppage = require('./indexHelp.js')(workbook, defaultDate);
 
 	var output = _.extend({}, landingpage, giftpage, joinpage, shoppage, helppage);  //, joinpage
 	
