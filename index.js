@@ -17,7 +17,7 @@
 	var defaultDate = "3/6/17";
 	var targetDate = program.date || defaultDate;
 	var workbook = XLSX.readFile(program.file || 'ContentProgramming.xlsx');
-	var path = program.path || __dirname
+	var path = program.path || __dirname;
 	var header = "var MSW = MSW || {}; MSW.data = ";
 
 	var landingpage = require('./indexLanding.js')(workbook, targetDate);
