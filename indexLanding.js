@@ -13,7 +13,7 @@
 		return output;
 	}
 
-		function _makeOutput(records){
+	function _makeOutput(records){
 		// NAV BAR
 
 		var navbar = _.where(records, {"Channel": "NAV BAR"}),

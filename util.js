@@ -77,7 +77,23 @@
 	}
 
 	function _getHeroItems(record){
-		return _.extend({}, _getItems(record), _getButton(record));
+		return _.extend({}, _getItems(record), _getButton(record), _getPrice(record));
+	}
+
+	function _getPrice(record){
+		var obj = {},
+			packAmount = _.find(record, function(item){return /\bPack Amount\b/i.test(item.Location)}),
+			packPrice =  _.find(record, function(item){return /\bPack Price\b/i.test(item.Location)});
+
+			if (packAmount && packAmount.value){
+				obj["price-detail"] = packAmount.value;
+			}
+		
+			if (packPrice && packPrice.value){
+				obj.price = packPrice.value;
+			}
+			
+		return _.extend({}, obj);
 	}
 
 	function _getButton(record){
