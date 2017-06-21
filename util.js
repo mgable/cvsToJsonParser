@@ -86,7 +86,7 @@
 			packPrice =  _.find(record, function(item){return /\bPack Price\b/i.test(item.Location)});
 
 			if (packAmount && packAmount.value){
-				obj["price-detail"] = packAmount.value;
+				obj["priceDetail"] = packAmount.value;
 			}
 		
 			if (packPrice && packPrice.value){
