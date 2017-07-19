@@ -21,6 +21,9 @@
 		var shoppage_featured,
 			shoppage_related,
 			packpage_carousel;
+
+		var shoppage_category_taglines = _.where(records, {"Channel": "NAV BAR-Category Taglines"});
+		shoppage_category_taglines = util.getPLPTaglines(shoppage_category_taglines);
 	
 		var shoppage_featured = _.where(records, {"Channel": "NAV BAR-Featured Packs Carousel"});
 		//var shoppage_related = _.where(records, {"Channel": "NAV BAR-Related Recipes Carousel"});
@@ -39,6 +42,7 @@
 
 		var output = {
 				shoppage: {
+					category_taglines: shoppage_category_taglines,
 					featured: shoppage_featured,
 					//related: shoppage_related
 				},
