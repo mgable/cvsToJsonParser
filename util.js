@@ -164,6 +164,14 @@
 		return obj;
 	}
 
+	function _getPLPTaglines(record) {
+		var obj = {};
+		_.each(record, function(row) {
+			obj[row.Location] = row.value;
+		});
+		return obj;
+	}
+
 	function _getRelated(record){
 		return _.extend({}, _getItems(record), _getButton(record));
 	}
@@ -212,6 +220,7 @@
 	exports.getQuote = _getQuote;
 	exports.group = _group;
 	exports.getItems = _getItems;
+	exports.getPLPTaglines = _getPLPTaglines;
 	exports.getTriptychItems = _getTriptychItems;
 	exports.getButton = _getButton;
 	exports.getHeroItems = _getHeroItems;
