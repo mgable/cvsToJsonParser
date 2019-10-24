@@ -1,0 +1,1 @@
+This was a quick solution when we did not have a Content Management System. Editors would add their content to a spreadsheet and I would run it through the app to get json which could then be uploaded to our website.
